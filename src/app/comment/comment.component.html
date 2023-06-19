@@ -1,0 +1,131 @@
+<!-- <p>comment works!</p>
+
+<div *ngIf="comments.length>0;then list;else NoList"></div>
+
+<ng-template #list>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>Id</th>
+                <th>CommentName</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comment of comments">
+                <td>{{comment.id}}</td>
+                <td>{{comment.commentName}}</td>
+         
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+<ng-template #NoList>
+
+    <h1>There is no record</h1>
+
+</ng-template>  -->
+
+<style>
+  body {
+    background-color: #444;
+    color: #fff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .navbar {
+    background-color: #0A86BA;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar h1 {
+    margin: 0;
+    color: #fff;
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #F3F3E9;
+    border-radius: 8px;
+  }
+
+  .form-container label {
+    color: #000;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .form-container input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .form-container button[type="submit"] {
+    background-color: #4F8793;
+    font-size: large;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .footer {
+    background-color: #0A86BA;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .footer p {
+    margin: 0;
+    color: #fff;
+  }
+</style>
+  
+<div class="navbar">
+  <h1>Comment Form</h1>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="commentForm" (ngSubmit)="AddComment()">
+
+    <div>
+      <label for="commentName">Comment:</label>
+      <input type="text" id="commentName" formControlName="commentName" required>
+    </div>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+<div class="footer">
+  <p>&copy; 2023 My Project Form. All rights reserved.</p>
+</div>
+
+
+ <!-- <form (submit)="onSubmit(commentName.value)"> -->
+<!-- <form>
+    <label for="commentName">Comment:</label>
+    <input type="text" id="commentName" name="commentName" required #Comment>
+  
+    <button type="submit">Add Comment</button>
+  </form> -->

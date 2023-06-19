@@ -1,0 +1,159 @@
+<!-- <p>project works!</p>
+
+
+<div *ngIf="projects.length>0;then list;else NoList"></div>
+
+<ng-template #list>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>Id</th>
+                <th>ProjectName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of projects">
+                <td>{{project.id}}</td>
+                <td>{{project.projectName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+<ng-template #NoList>
+
+    <h1>There is no record</h1>
+
+</ng-template> -->
+
+
+
+
+<!-- <form [formGroup]="projectForm" (ngSubmit)="AddProject()">
+ <div>
+
+      <label for="projectName">Project Name:</label>
+
+      <input type="text" id="projectName" formControlName="projectName" required>
+
+    </div>
+
+    <div>
+
+      <button type="submit"  style="background-color:#D6EEEE; font-size:large; border-radius: 8px; margin-top: 10px;">Submit</button>
+
+    </div>
+
+  </form> -->
+  <!-- <form [formGroup]="projectForm" (ngSubmit)="AddProject()" style="max-width: 400px; margin: 0 auto;">
+
+    <div style="margin-bottom: 20px;">
+      <label for="projectName" style="font-weight: bold;">Project Name:</label>
+      <input type="text" id="projectName" formControlName="projectName" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%;">
+    </div>
+  
+    <div style="text-align: center;">
+      <button type="submit" style="background-color: #D6EEEE; font-size: large; border-radius: 8px; padding: 10px 20px; border: none; color: #333; cursor: pointer;">
+        Submit
+      </button>
+    </div>
+  
+  </form> -->
+  
+  
+ 
+      
+   <style>
+    body {
+      background-color: #444;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+  
+    .navbar {
+      background-color: #0A86BA;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .navbar h1 {
+      margin: 0;
+      color: #fff;
+    }
+  
+    .form-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #F3F3E9;
+      border-radius: 8px;
+    }
+  
+    .form-container label {
+      color: #000;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .form-container input[type="text"] {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 100%;
+      background-color: #fff;
+      color: #333;
+      margin-bottom: 15px;
+    }
+  
+    .form-container button[type="submit"] {
+      background-color: #4F8793;
+      font-size: large;
+      border-radius: 8px;
+      padding: 10px 20px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+    }
+  
+    .footer {
+      background-color: #0A86BA;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  
+    .footer p {
+      margin: 0;
+      color: #fff;
+    }
+  </style>
+  
+  <div class="navbar">
+    <h1>My Project Form</h1>
+  </div>
+  
+  <div class="form-container">
+    <form [formGroup]="projectForm" (ngSubmit)="AddProject()">
+  
+      <div>
+        <label for="projectName">Project Name:</label>
+        <input type="text" id="projectName" formControlName="projectName" required>
+      </div>
+  
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+  
+    </form>
+  </div>
+  
+  <div class="footer">
+    <p>&copy; 2023 My Project Form. All rights reserved.</p>
+  </div>
+  

@@ -1,0 +1,78 @@
+<div *ngIf="documents.length>0;then list;else NoList"></div>
+
+<ng-template #list>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>Id</th>
+              
+                <th>AdharPath</th>
+                <th>VisaPath</th>
+                <th>PassportPath</th>
+                <th>TicketId</th>
+                <th>TicketPath</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let document of documents">
+                <!-- <td>{{document.id}}</td> -->
+                <td>{{document.aadharPath}}</td>
+                <td>{{document.visaPath}}</td>
+                <td>{{document.passportPath}}</td>
+                <td>{{document.ticketId}}</td>
+                <td>{{document.ticketPath}}</td>
+                
+         
+             </tr>
+        </tbody> 
+    </table>
+</ng-template>
+<ng-template #NoList>
+
+    <h1>There is no record</h1>
+
+</ng-template> 
+
+
+
+
+
+
+      <form  #documentForm="ngForm" (ngSubmit)="AddDocument(documentForm)">
+ 
+
+      <div class="form-group">
+        <label for="aadharPath">AdharPath:</label>
+        <input type="text"  id="aadharPath" name="aadharPath"   ngModel
+        > 
+      </div>
+      <div class="form-group">
+        <label for="visaPath">visaPath:</label>
+        <input type="text"  id="visaPath" name="visaPath"   ngModel
+        > 
+      </div>
+      <div class="form-group">
+        <label for="passportPath">passportPath:</label>
+        <input type="text"  id="passportPath" name="passportPath"   ngModel
+        > 
+      </div>
+
+      <div class="form-group">
+        <label for="aadhar">file upload:</label>
+        <input type="file"  id="aadhar" name="aadhar"   ngModel
+        (change)="onFileChange1($event)"> 
+      </div>
+      <div class="form-group">
+        <label for="visa">file upload:</label>
+        <input type="file"  id="visa" name="visa"   ngModel
+        (change)="onFileChange2($event)"> 
+      </div>
+      <div class="form-group">
+        <label for="passport">file upload:</label>
+        <input type="file"  id="passport" name="passport"   ngModel
+        (change)="onFileChange3($event)"> 
+      </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+ </form> 

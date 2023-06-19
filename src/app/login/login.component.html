@@ -1,0 +1,47 @@
+<h1>Login Form</h1>
+
+<form #regForm="ngForm" (ngSubmit)="Register(regForm)">
+  
+  <div class="mb-3">
+  
+  <div>
+      <label for="txtName"> Enter Email </label><br>
+      <input type="text" name="txtName" ngModel  
+      required maxlength="20" minlength="5" #name="ngModel"/>
+      <div *ngIf="name.touched && name.invalid">
+          <div *ngIf="name.errors?.['required']">
+              Name is must
+          </div>
+          <div *ngIf="name.errors?.['minlength']">
+            Min 5 cgar
+          </div>
+
+
+  </div>
+  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+</div>
+  
+ <div class="mb-3">
+  <label for="txtName"> Enter Password </label><br>
+      <input type="text" name="Password" ngModel  
+      required maxlength="20" minlength="3" #Password="ngModel"/>
+      <div *ngIf="Password.touched && Password.invalid">
+          <div *ngIf="Password.errors?.['required']">
+              Password  is must
+          </div>
+          
+          <div *ngIf="Password.errors?.['minlength']">
+            Min 3 cgar
+          </div>
+  </div>
+  <div class="mb-3 form-check"> 
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+
+  </div>
+  <button type="submit" [disabled]='regForm.invalid'> Register </button>
+</div>
+</form>
+
+

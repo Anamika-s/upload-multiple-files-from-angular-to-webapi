@@ -1,0 +1,28 @@
+<p>commontype works!</p>
+
+<div *ngIf="commontypes.length>0;then list;else NoList"></div>
+
+<ng-template #list>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>Id</th>
+                <th>Type</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let commontype of commontypes">
+                <td>{{commontype.id}}</td>
+                <td>{{commontype.type}}</td>
+                <td>{{commontype.value}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+<ng-template #NoList>
+
+    <h1>There is no record</h1>
+
+</ng-template>
